@@ -4,7 +4,7 @@
 	$server = "localhost";
 	$username = "root";
 	$password = "admin123$";
-	$dataBase = "tienda";
+	$dataBase = "plantilla";
 	
 	if (!($link=@mysqli_connect($server, $username, $password))){
 		echo 'No se pudo conectar a la base de datos';

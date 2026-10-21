@@ -3,7 +3,7 @@
 Class Connection{
  	
 	
-	private $server = "mysql:host=localhost;dbname=tienda";
+	private $server = "mysql:host=localhost;dbname=plantilla";
 	private $username = "root";
 	private $password = "admin123$";
 	

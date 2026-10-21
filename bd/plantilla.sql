@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 08-08-2026 a las 18:00:32
+-- Tiempo de generación: 21-10-2026 a las 09:37:23
 -- Versión del servidor: 8.0.17
 -- Versión de PHP: 7.3.10
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `tienda`
+-- Base de datos: `plantilla`
 --
 
 -- --------------------------------------------------------
@@ -123,7 +123,7 @@ CREATE TABLE `configuracion` (
 --
 
 INSERT INTO `configuracion` (`id`, `nombreNegocio`, `direccion`, `telefono`, `correo`) VALUES
-(1, 'ABARROTES CAMY', 'Col. 20 de Noviembre, No.14, Ixmiquilpan, Hgo.', '771-122-3344', 'contacto@negocio.com');
+(1, 'ABARROTES', 'El Nith', '771-122-3344', 'contacto@negocio.com');
 
 -- --------------------------------------------------------
 
@@ -177,7 +177,7 @@ CREATE TABLE `productos` (
   `stock` decimal(10,3) NOT NULL DEFAULT '0.000',
   `stockMinimo` decimal(10,3) DEFAULT NULL,
   `estado` tinyint(1) NOT NULL DEFAULT '1',
-  `tipoVenta` enum('UNIDAD','GRANEL') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'UNIDAD',
+  `tipoVenta` enum('UNIDAD','GRANEL') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'UNIDAD',
   `fechaCreacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `fechaModificacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -475,8 +475,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`idUsuario`, `usuario`, `contrasena`, `nombreUsuarios`, `foto`, `nivel`, `estado`, `fechaNac`, `created_at`) VALUES
-(1, 'admin', 'admin123', 'ADMINISTRADOR', '../../dist/img/user.png', 1, 1, '1995-10-05', '2026-07-16 15:15:26'),
-(2, 'yare', '12345', 'YARELY', 'fotos/user.png', 2, 1, NULL, '2026-07-16 10:02:39');
+(1, 'admin', 'admin123', 'ADMINISTRADOR', '../../dist/img/user.png', 1, 1, '1995-10-05', '2026-07-16 15:15:26');
 
 -- --------------------------------------------------------
 
@@ -494,7 +493,7 @@ CREATE TABLE `ventas` (
   `cambio` decimal(10,2) NOT NULL DEFAULT '0.00',
   `estado` enum('ACTIVA','CANCELADA') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'ACTIVA',
   `fechaVenta` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `metodoPago` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'EFECTIVO'
+  `metodoPago` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'EFECTIVO'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
